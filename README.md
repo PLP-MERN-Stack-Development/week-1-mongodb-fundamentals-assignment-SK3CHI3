@@ -1,47 +1,61 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=19707065&assignment_repo_type=AssignmentRepo)
 # MongoDB Fundamentals Assignment
 
-This assignment focuses on learning MongoDB fundamentals including setup, CRUD operations, advanced queries, aggregation pipelines, and indexing.
+A Node.js application demonstrating MongoDB operations including CRUD, advanced queries, aggregation pipelines, and indexing.
 
-## Assignment Overview
+## Features Implemented
 
-You will:
-1. Set up a MongoDB database
-2. Perform basic CRUD operations
-3. Write advanced queries with filtering, projection, and sorting
-4. Create aggregation pipelines for data analysis
-5. Implement indexing for performance optimization
+- Basic CRUD Operations on a books collection
+- Advanced queries with filtering, sorting, and projection
+- Aggregation pipelines for data analysis
+- Database indexing for performance
+- Sample dataset of books
 
-## Getting Started
+## Project Structure
 
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Install MongoDB locally or set up a MongoDB Atlas account
-4. Run the provided `insert_books.js` script to populate your database
-5. Complete the tasks in the assignment document
+```
+src/
+  ├── config/
+  │   └── db.js         # MongoDB connection configuration
+  ├── insert_books.js   # Sample data insertion script
+  ├── queries.js        # MongoDB queries implementation
+  └── show_db_state.js  # Database state visualization
+```
 
-## Files Included
+## Setup Instructions
 
-- `Week1-Assignment.md`: Detailed assignment instructions
-- `insert_books.js`: Script to populate your MongoDB database with sample book data
+1. Install dependencies:
 
-## Requirements
+   ```bash
+   npm install
+   ```
 
-- Node.js (v18 or higher)
-- MongoDB (local installation or Atlas account)
-- MongoDB Shell (mongosh) or MongoDB Compass
+2. Configure MongoDB:
+   - Ensure MongoDB is running locally
+   - Update `.env` file if needed (default: mongodb://localhost:27017/)
 
-## Submission
+3. Initialize database:
 
-Your work will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
+   ```bash
+   npm run init-db
+   ```
 
-1. Complete all tasks in the assignment
-2. Add your `queries.js` file with all required MongoDB queries
-3. Include a screenshot of your MongoDB database
-4. Update the README.md with your specific setup instructions
+## Available Scripts
 
-## Resources
+- `npm run init-db` - Initialize database with sample books
+- `npm start` - Run the queries demonstration
 
-- [MongoDB Documentation](https://docs.mongodb.com/)
-- [MongoDB University](https://university.mongodb.com/)
-- [MongoDB Node.js Driver](https://mongodb.github.io/node-mongodb-native/) 
+## Sample Database Output
+
+Here's the current state of the books collection:
+
+```
+┌─────────┬─────────────────────────┬───────────────────────┬───────────────────┬──────┬───────┬────────┐
+│ Title                   │ Author                │ Genre             │ Year │ Price │ Rating │
+├─────────────────────────┼───────────────────────┼───────────────────┼──────┼───────┼────────┤
+│ The Great Gatsby       │ F. Scott Fitzgerald  │ Fiction          │ 1925 │ 11.99 │ 4.5    │
+│ To Kill a Mockingbird  │ Harper Lee          │ Fiction          │ 1960 │ 12.99 │ 4.8    │
+│ 1984                   │ George Orwell       │ Science Fiction  │ 1949 │ 10.99 │ 4.7    │
+│ Pride and Prejudice    │ Jane Austen        │ Romance          │ 1813 │  8.99 │ 4.6    │
+│ The Hobbit            │ J.R.R. Tolkien     │ Fantasy          │ 1937 │ 14.99 │ 4.9    │
+└─────────┴─────────────────────────┴───────────────────────┴───────────────────┴──────┴───────┴────────┘
+```
